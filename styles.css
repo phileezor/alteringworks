@@ -1,3 +1,4 @@
+/* Custom font inclusion */
 @font-face {
     font-family: 'Sackers Gothic Std Heavy';
     src: url('fonts/Sackers Gothic Std Heavy.otf') format('opentype');
@@ -5,84 +6,67 @@
     font-style: normal;
 }
 
-body, html {
+/* General reset */
+* {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
+}
+
+/* Make body take up full height */
+html, body {
+    height: 100%;
+    font-family: Arial, sans-serif; /* Fallback font */
+}
+
+/* Apply custom font to all paragraphs */
+p {
+    font-family: 'Sackers Gothic Std Heavy', Arial, sans-serif; /* Fallback font */
+}
+
+/* Video background styling */
+.video-background {
+    position: fixed;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
-    font-family: Arial, sans-serif;
+    overflow: hidden;
+    z-index: -1; /* Ensure video stays behind the content */
+}
+
+#bg-video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensure video covers entire background */
+    transform: translate(-50%, -50%);
+}
+
+/* Content styling */
+.content {
     display: flex;
     justify-content: center;
     align-items: center;
-    overflow: hidden;
-    background: black; /* Fallback background color */
-}
-
-.video-background {
-    position: fixed; /* Ensure it's fixed to cover the whole viewport */
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-    z-index: -1;
-}
-
-.video-background video {
-    width: 100%;
-    height: 100%;
-    object-fit: cover; /* Ensures the video covers the entire container */
-    position: absolute;
-    top: 0;
-    left: 0;
-}
-
-.content {
-    position: relative;
-    z-index: 1;
-    color: white;
+    height: 100vh;
     text-align: center;
-    padding: 20px;
+    color: white; /* Change this if your text needs a different color */
+    z-index: 1; /* Ensure content stays above the video */
 }
 
-.content h1 {
-    font-size: 3em;
-    margin: 0;
-}
-
-.content p {
-    font-size: 2.4em;
-    font-family: 'Sackers Gothic Std Heavy', Arial, sans-serif;
+.fade-in {
+    animation: fadeIn 3s ease-in-out;
+    font-size: 2em; /* Adjust as necessary */
 }
 
 /* Fade-in animation */
 @keyframes fadeIn {
-    0% {
+    from {
         opacity: 0;
     }
-    100% {
+    to {
         opacity: 1;
-    }
-}
-
-.fade-in {
-    opacity: 0; /* Start invisible */
-    animation: fadeIn 3s ease-in 2s forwards; /* 3s duration, 2s delay */
-}
-
-/* Media Queries for responsiveness */
-@media (max-width: 768px) {
-    .content p {
-        font-size: 1.8em;
-    }
-}
-
-@media (max-width: 480px) {
-    .content p {
-        font-size: 1.4em;
-    }
-
-    .video-background video {
-        object-fit: contain; /* Adjust video fit for smaller screens */
     }
 }

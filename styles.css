@@ -81,12 +81,16 @@ body, html {
     }
 
     .video-background video {
-        object-fit: contain; /* Adjust video fit for smaller screens */
+        object-fit: cover;
     }
 }
 
 @media (max-width: 480px) {
     .content p {
         font-size: 1.4em;
+    }
+
+    .video-background video {
+        object-fit: contain; /* Adjust video fit for smaller screens */
     }
 }

@@ -37,10 +37,6 @@ body, html {
     left: 0;
 }
 
-.spacer {
-    display: none; /* Removed spacer, used flexbox instead */
-}
-
 .content {
     position: relative;
     z-index: 1;

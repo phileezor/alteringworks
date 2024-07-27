@@ -1,8 +1,7 @@
-// JavaScript to adjust viewport scale based on device
 function adjustViewport() {
     var viewport = document.querySelector('meta[name="viewport"]');
-    if (window.innerWidth < 768) {
-        viewport.setAttribute('content', 'width=device-width, initial-scale=0.2');
+    if (window.innerWidth < 480) { // Adjust for mobile devices
+        viewport.setAttribute('content', 'width=device-width, initial-scale=0.5');
     } else {
         viewport.setAttribute('content', 'width=device-width, initial-scale=1.0');
     }

@@ -64,8 +64,11 @@ p {
 }
 
 .fade-in {
-    animation: fadeIn 7s ease-in-out infinite; /* Loop every 7 seconds */
-    animation-delay: 0.54s; /* 13 frames delay (13/24fps = 0.54s) */
+    -webkit-animation: fadeIn 7s ease-in-out infinite;
+    -moz-animation: fadeIn 7s ease-in-out infinite;
+    -o-animation: fadeIn 7s ease-in-out infinite;
+    animation: fadeIn 7s ease-in-out infinite;
+    animation-delay: 0.54s;
 }
 
 .main-text {

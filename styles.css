@@ -52,21 +52,41 @@ p {
     align-items: center;
     height: 100vh;
     text-align: center;
-    color: white; /* Change this if your text needs a different color */
-    z-index: 1; /* Ensure content stays above the video */
+    color: white;
+    z-index: 1;
+}
+
+.text-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transform: translateY(20vh); /* This moves the entire text block down */
 }
 
 .fade-in {
-    animation: fadeIn 3s ease-in-out;
-    font-size: 2em; /* Adjust as necessary */
+    animation: fadeIn 7s ease-in-out infinite; /* Loop every 7 seconds */
+    animation-delay: 0.54s; /* 13 frames delay (13/24fps = 0.54s) */
+}
+
+.main-text {
+    font-size: 2em;
+    margin-bottom: 1em; /* Adds space between "coming soon" and social links */
+}
+
+.social-links {
+    font-size: 1em;
+}
+
+.social-links span {
+    margin: 0 12.5px; /* This adds 25px space between instagram and twitter (12.5px on each side) */
 }
 
 /* Fade-in animation */
 @keyframes fadeIn {
-    from {
+    0%, 100% {
         opacity: 0;
     }
-    to {
+    50% {
         opacity: 1;
     }
 }

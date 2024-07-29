@@ -85,13 +85,17 @@ p {
 }
 
 .social-links a {
-    text-decoration: none;
-    color: white;
-    transition: text-decoration 0.3s ease;
+    text-decoration: none; /* Remove default underline */
+    color: inherit; /* Use the default text color */
+    transition: text-decoration 0.3s ease; /* Smooth transition for underline */
 }
 
 .social-links a:hover {
-    text-decoration: underline;
+    text-decoration: underline; /* Underline on hover */
+}
+
+.social-links a:not(:hover) {
+    text-decoration: none; /* Remove underline when not hovering */
 }
 
 /* Fade-in animation */

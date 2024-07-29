@@ -84,6 +84,16 @@ p {
     margin: 0 12.5px; /* This adds 25px space between instagram and twitter (12.5px on each side) */
 }
 
+.social-links a {
+    text-decoration: none;
+    color: white;
+    transition: text-decoration 0.3s ease;
+}
+
+.social-links a:hover {
+    text-decoration: underline;
+}
+
 /* Fade-in animation */
 @keyframes fadeIn {
     0%, 100% {

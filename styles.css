@@ -8,10 +8,13 @@
 
 @font-face {
     font-family: 'Baskervville Italic';
-    src: url('fonts/Baskervville-Italic.ttf') format('truetype');
+    src: url('fonts/Baskervville-Italic.woff2') format('woff2'),
+         url('fonts/Baskervville-Italic.woff') format('woff'),
+         url('fonts/Baskervville-Italic.ttf') format('truetype');
     font-weight: normal;
     font-style: italic;
 }
+
 
 /* General reset */
 * {
@@ -21,9 +24,11 @@
 }
 
 /*alternative subtext font*/
-.alt-font {
-    font-family: 'Baskervville Italic', Arial, sans-serif; /* Fallback to Arial if the custom font fails to load */
+p.alt-font {
+    font-family: 'Baskervville Italic', Arial, sans-serif !important;
 }
+
+
 
 /* Make body take up full height */
 html, body {
